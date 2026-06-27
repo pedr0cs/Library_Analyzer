@@ -17,5 +17,5 @@ titulos_unicos = repeticoes(lista, 'titulo')
 autores_unicos = repeticoes(lista, 'autor')
 generos_unicos = repeticoes(lista, 'genero')
 
-for genero in generos_unicos:
-    print(genero)
+for autor in autores_unicos:
+    print(autor)
