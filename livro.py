@@ -29,11 +29,30 @@ try:
     autores_unicos = repeticoes(lista, 'autor')
     generos_unicos = repeticoes(lista, 'genero')
 
-    for genero in generos_unicos:
-       print(genero, generos_frequentes.count(genero))
-    #for autor in autores_unicos:
-    #    print(autor, autores_frequentes.count(autor))
-    #for titulos in titulos_unicos:
-    #    print(titulos)
 except:
     print('Infelizmente ocorreu um erro. Tente novamente')
+
+autor_mais_frequente = ''
+maior_contagem = 0
+
+for autor in autores_unicos:
+    contagem_atual = autores_frequentes.count(autor)
+    if contagem_atual > maior_contagem:
+        maior_contagem = contagem_atual
+        autor_mais_frequente = autor
+
+genero_mais_frequente = ''
+maior_contagem = 0
+
+for genero in generos_unicos:
+    contagem_atual = generos_frequentes.count(genero)
+    if contagem_atual > maior_contagem:
+        maior_contagem = contagem_atual
+        genero_mais_frequente = genero
+
+print(f"O total de livros são: {len(lista)}")
+print(f"O autor mais frequente é: {autor_mais_frequente}")
+print(f"Os autores lidos foram: {', '.join(autores_unicos)}")
+print(f"Os títulos lidos são: {', '.join(titulos_unicos)}")
+print(f"O gênero mais lido foi: {genero_mais_frequente}")
+print(f"Os gêneros lidos foram: {', '.join(generos_unicos)}")
